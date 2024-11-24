@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Lobster", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@keyframes gradient-xy {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-xy {
+  animation: gradient-xy 1s ease infinite;
+  background-size: 100% 2100%;
+}
+
+/* Animación de flotación */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Efecto Neon para los íconos */
+.neon-icon {
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 
+               0 0 40px #ffffff, 0 0 80px #ffffff, 0 0 90px #ffffff, 
+               0 0 100px #ffffff;
+}
+
+/* Efecto Neon para los cuadrados (fondo) */
+.neon-card {
+  background-color: rgba(0, 0, 0, 1); /* Fondo negro */
+  box-shadow: 
+    0 0 10px 2px #ffffff, 
+    0 0 20px 4px #ffffff, 
+    0 0 30px 6px #ffffff, 
+    0 0 40px 8px #ffffff; /* Sombra luminosa blanca */
+}
+
+.app-container {
+  background-color: inherit; /* Hereda el color de fondo global */
+  color: inherit; /* Hereda el color de texto global */
+}
